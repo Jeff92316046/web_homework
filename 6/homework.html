@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script async src="main.js"></script>
-</head>
-<body>
-    <input type="number" id="input1"/>
-    <input type="number" id="input2"/>
-    <input type="number" id="input3"/>
-      
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script async src="main.js"></script>
+    </head>
+    <body>
+        <div style="margin: 5%;"> 
+            <div>
+                <input type="number" id="input1" style="height: 1.25rem;margin:0.2rem;"/>
+            </div>
+            <div>
+                <input type="number" id="input2" style="height: 1.25rem;margin: 0.2rem;"/>
+            </div>
+            <div>
+                <input type="number" id="input3" style="height: 1.25rem;margin: 0.2rem;"/>
+            </div>
+            <button onclick="cosanddraw()" style="height:2rem;width: 5rem;font-size: large;margin: 0.2rem;">draw</button>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <canvas style="display: none;" id="canvas1"></canvas>
+                            <div id="nontri" style="font-size: large;display: none;" >不是三角形</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="tritype" style="font-size: large;display: none;" ></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="area" style="font-size: large;display: none;"></div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="perimeter" style="font-size: large;display: none;"></div>
+                        </td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
 </html>
