@@ -1,0 +1,105 @@
+<html>
+    <head>
+
+    </head>
+
+    <body > 
+
+        
+        
+        <div >題目</div>
+        <ol>
+            <li>
+                請問あ的羅馬字是?
+                <nobr></nobr>
+                <button onclick="correct(1,1)"  class="q1">a</button>
+                <button onclick="incorrect(1,1)" class="q1">o</button>
+                <img style="display: none;" src="x.png" class="q1">
+            </li>
+            <li>
+                請問か的羅馬字是?
+                <button onclick="correct(2,1)"   class="q2">ka</button>
+                <button onclick="incorrect(2,1)" class="q2">ku</button>
+                <img style="display: none;" src="x.png" class="q2">
+            </li>
+            <li>
+                請問け的羅馬字是?
+                <button onclick="correct(3,1)"   class="q3">ke</button>
+                <button onclick="incorrect(3,1)" class="q3">ta</button>
+                <img style="display: none;" src="x.png" class="q3">
+            </li>
+            <li>
+                請問は的羅馬字是?
+                <button onclick="incorrect(4,2)" class="q4">he</button>
+                <button onclick="correct(4,2)"   class="q4">ha</button>
+                <img style="display: none;" src="x.png" class="q4">
+            </li>
+            <li>
+                請問み的羅馬字是?
+                <button onclick="correct(5,1)"   class="q5">mi</button>
+                <button onclick="incorrect(5,1)" class="q5">me</button>
+                <img style="display: none;" src="x.png" class="q5">
+            </li>
+            <li>
+                請問みつ是什麼意思?
+                <button onclick="correct(6,1)"   class="q6">水</button>
+                <button onclick="incorrect(6,1)" class="q6">火</button>
+                <img style="display: none;" src="x.png" class="q6">
+            </li>
+            <li>
+                請問きれい是什麼意思?
+                <button onclick="incorrect(7,2)" class="q7">聰明</button>
+                <button onclick="correct(7,2)"   class="q7">漂亮</button>
+                <img style="display: none;" src="x.png" class="q7">
+            </li>
+            <li>
+                請問ひかり是什麼意思?
+                <button onclick="correct(8,1)"   class="q8">光</button>
+                <button onclick="incorrect(8,1)" class="q8">暗</button>
+                <img style="display: none;" src="x.png" class="q8">
+            </li>
+            <li>
+                請問下圖的日文是?
+                <img  src="cat.png" style="background-color: steelblue ;width: 100px;"></img>
+                <button onclick="correct(9,1)"   class="q9">ねこ</button>
+                <button onclick="incorrect(9,1)" class="q9">いぬ</button>
+                <img style="display: none;" src="x.png" class="q9">
+            </li>
+            <li>請問下列哪個顏色是あお?
+                <button onclick="correct(10,1)"  class="q10">
+                    <div  style="font-size:1.5rem;color: blue;background-color: blue;">aa</div>
+                </button>
+                <button onclick="incorrect(10,1)" class="q10">
+                    <div  style="font-size:1.5rem;color: red;background-color: red;">aa</div>
+                </button>
+                <img style="display: none;" src="x.png" class="q10">
+            </li>
+            <li>
+                i的五十音是什麼
+                <input id="input1" class="q11" type="text" >
+                <img style="display: none;" src="x.png" class="q11">
+            </li>
+            <li>
+                hi的五十音是什麼
+                <input id="input2"  class="q12" type="text" >
+                <img style="display: none;"src="x.png" class="q12">
+            </li>
+            <li>
+                bi的五十音是什麼
+                <input id="input3" class="q13" type="text" >
+                <img style="display: none;"src="x.png" class="q13">
+            </li>
+            <li>
+                ku的五十音是什麼
+                <input id="input4" class="q14" type="text" >
+                <img style="display: none;"src="x.png" class="q14">
+            </li>
+        </ol>
+        <button id="summit" style="font-size: 22px;" onclick="answer_check()">summit</button>
+        <button id="reset" style="font-size: 22px;" onclick="reset()">reset</button>
+        <div style="display: none;" id="point"></div>
+        <div ><a href="https://jeff92316046.github.io/myweb/">個人網站</a></div>
+        <script src="main.js"></script>
+    </body>
+    
+</html>
