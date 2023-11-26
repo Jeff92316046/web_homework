@@ -6,20 +6,101 @@
     <title>Document</title>
 </head>
 <body > 
-    <div>題目</div>
+    <h1 id="title">題目</h1>
     <ol>
         <li>
+            <div class="onlyradio">請問うさぎ是什麼意思?</div>
+            <div>
+                <input type="radio" class="onlyradio" onclick="onlyradio(0)" name="onlyradio"/>
+                <span>兔子</span>
+                <input type="radio" class="onlyradio" onclick="onlyradio(1)" name="onlyradio"/>
+                <span>獅子</span>
+                <input type="radio" class="onlyradio" onclick="onlyradio(2)" name="onlyradio"/>
+                <span>鳥</span>
+                <img style="display:none;" src="x.png" class="onlyradio">
+            </div>
             
-            <input type="radio" class="onlyradio" onclick="onlyradio()" name="contact"/>
-            <span>a</span>
-
-            <input type="radio" class="onlyradio" name="contact"/>
-            <span>b</span>
-      
-            <input type="radio" class="onlyradio" name="contact"/>
-            <span>c</span>
         </li>
-        
+        <li>
+            <div class="multcheckbox1">請問哪個是ki的平假名跟片假名?</div>
+            <div>
+                <input type="checkbox" class="multcheckbox1"  name="multcheckbox1"/>
+                <span>き</span>
+                <input type="checkbox" class="multcheckbox1"  name="multcheckbox1"/>
+                <span>ぎ</span>
+                <input type="checkbox" class="multcheckbox1"  name="multcheckbox1"/>
+                <span>キ</span>
+                <input type="checkbox" class="multcheckbox1"  name="multcheckbox1"/>
+                <span>ケ</span>
+                <img style="display:none;" src="x.png" class="multcheckbox1">
+            </div>
+        </li>
+        <li>
+            <div class="multcheckbox2">請問哪個是ha的平假名跟片假名?</div>
+            <div>
+                <input type="checkbox" class="multcheckbox2"  name="multcheckbox2"/>
+                <span>へ</span>
+                <input type="checkbox" class="multcheckbox2"  name="multcheckbox2"/>
+                <span>は</span>
+                <input type="checkbox" class="multcheckbox2"  name="multcheckbox2"/>
+                <span>ハ</span>
+                <input type="checkbox" class="multcheckbox2"  name="multcheckbox2"/>
+                <span>ぱ</span>
+                <img style="display:none;" src="x.png" class="multcheckbox2">
+            </div>
+        </li>
+        <li>
+            <div class="onlyselect1">請問ね的羅馬拼音是na?</div>
+            <div>
+                <select class="onlyselect1" name="onlyselect1" >
+                    <option value="0">對</option>
+                    <option value="1">錯</option>
+                </select>
+                <img style="display:none;" src="x.png" class="onlyselect1">
+            </div>
+        </li>
+        <li>
+            <div class="onlyselect2">請問う的羅馬拼音是?</div>
+            <div>
+                <select class="onlyselect2" name="onlyselect2" >
+                    <option value="0">a</option>
+                    <option value="1">i</option>
+                    <option value="2">u</option>
+                    <option value="3">e</option>
+                </select>
+                <img style="display:none;" src="x.png" class="onlyselect2">
+            </div>
+        </li>
+        <li>
+            <div class="multselect1">請問哪個是hi的平假名跟片假名?</div>
+            <div>
+                <select class="multselect1" name="multselect1" multiple>
+                    <option value="0">ひ</option>
+                    <option value="1">び</option>
+                    <option value="2">ヒ</option>
+                    <option value="3">ぺ</option>
+                </select>
+                <img style="display:none;" src="x.png" class="multselect1">
+            </div>
+        </li>
+        <li>
+            <div class="multselect2">請問哪個是gi的平假名跟片假名?</div>
+            <div>
+                <select class="multselect2" name="multselect2" multiple>
+                    <option value="0">ぎ</option>
+                    <option value="1">き</option>
+                    <option value="2">け</option>
+                    <option value="3">ギ</option>
+                </select>
+                <img style="display:none;" src="x.png" class="multselect2">
+            </div>
+        </li>
+        <li>
+            <div class="thoughts">感想(不可空白)</div>
+            <div>
+                <textarea class="thoughts" ></textarea>
+            </div>
+        </li>
     </ol>
     <button id="summit" style="font-size: 22px;" onclick="answer_check()">summit</button>
     <button id="reset" style="font-size: 22px;" onclick="reset()">reset</button>

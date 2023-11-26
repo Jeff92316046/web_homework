@@ -124,6 +124,7 @@ function reset(){
     summit.disabled = false
     document.getElementById('status').textContent = ''
     document.getElementById('point').textContent = ""
+    point = 0   
 }
 
 
