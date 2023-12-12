@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="display()">
     <nav style="padding: 1.5rem;background-color:#ffcfad;"> 
         <table >
             <tr>
@@ -25,8 +25,99 @@
         </table>
     </nav>
     <div style="background-color:antiquewhite;">
-    
+        <h2 id="title" style="margin: 0;padding:2rem ;"></h2>
+        <ol style="margin: 0px;padding: 4rem;padding-bottom: 0px;padding-top: 0px;">
+            <li class="question">
+                請問あ的羅馬字是?
+                <nobr></nobr>
+                <button onclick="correct(1,1)"  class="q1">a</button>
+                <button onclick="incorrect(1,1)" class="q1">o</button>
+                <img style="display: none;" src="x.png" class="q1">
+            </li>
+            <li class="question">
+                請問か的羅馬字是?
+                <button onclick="correct(2,1)"   class="q2">ka</button>
+                <button onclick="incorrect(2,1)" class="q2">ku</button>
+                <img style="display: none;" src="x.png" class="q2">
+            </li>
+            <li class="question">
+                請問け的羅馬字是?
+                <button onclick="correct(3,1)"   class="q3">ke</button>
+                <button onclick="incorrect(3,1)" class="q3">ta</button>
+                <img style="display: none;" src="x.png" class="q3">
+            </li>
+            <li class="question">
+                請問は的羅馬字是?
+                <button onclick="incorrect(4,2)" class="q4">he</button>
+                <button onclick="correct(4,2)"   class="q4">ha</button>
+                <img style="display: none;" src="x.png" class="q4">
+            </li>
+            <li class="question">
+                請問み的羅馬字是?
+                <button onclick="correct(5,1)"   class="q5">mi</button>
+                <button onclick="incorrect(5,1)" class="q5">me</button>
+                <img style="display: none;" src="x.png" class="q5">
+            </li>
+            <li class="question">
+                請問みつ是什麼意思?
+                <button onclick="correct(6,1)"   class="q6">水</button>
+                <button onclick="incorrect(6,1)" class="q6">火</button>
+                <img style="display: none;" src="x.png" class="q6">
+            </li>
+            <li class="question">
+                請問きれい是什麼意思?
+                <button onclick="incorrect(7,2)" class="q7">聰明</button>
+                <button onclick="correct(7,2)"   class="q7">漂亮</button>
+                <img style="display: none;" src="x.png" class="q7">
+            </li>
+            <li class="question">
+                請問ひかり是什麼意思?
+                <button onclick="correct(8,1)"   class="q8">光</button>
+                <button onclick="incorrect(8,1)" class="q8">暗</button>
+                <img style="display: none;" src="x.png" class="q8">
+            </li>
+            <li class="question">
+                請問下圖的日文是?
+                <img  src="cat.png" style="width: 4rem;"></img>
+                <button onclick="correct(9,1)"   class="q9">ねこ</button>
+                <button onclick="incorrect(9,1)" class="q9">いぬ</button>
+                <img style="display: none;" src="x.png" class="q9">
+            </li>
+            <li class="question">請問下列哪個顏色是あお?
+                <button onclick="correct(10,1)"  class="q10">
+                    <div  style="font-size:1.5rem;color: blue;background-color: blue;">aa</div>
+                </button>
+                <button onclick="incorrect(10,1)" class="q10">
+                    <div  style="font-size:1.5rem;color: red;background-color: red;">aa</div>
+                </button>
+                <img style="display: none;" src="x.png" class="q10">
+            </li>
+            <li class="question">
+                i的五十音是什麼
+                <input id="input1" class="q11" type="text" >
+                <img style="display: none;" src="x.png" class="q11">
+            </li>
+            <li class="question">
+                hi的五十音是什麼
+                <input id="input2"  class="q12" type="text" >
+                <img style="display: none;"src="x.png" class="q12">
+            </li>
+            <li class="question">
+                bi的五十音是什麼
+                <input id="input3" class="q13" type="text" >
+                <img style="display: none;"src="x.png" class="q13">
+            </li>
+            <li class="question">
+                ku的五十音是什麼
+                <input id="input4" class="q14" type="text" >
+                <img style="display: none;"src="x.png" class="q14">
+            </li>
+        </ol>
+        <button id="summit" style="font-size: 22px;margin-left: 2rem;margin-bottom: 2rem;" onclick="answer_check()">summit</button>
+        <button id="reset" style="font-size: 22px;" onclick="reset()">reset</button>
+        <div style="display: none;margin-left: 2rem;margin-bottom: 2rem;" id="point"></div>
     </div>
-    <script src="main.js"></script>
+    
+    <script src="test.js"></script>
 </body>
 </html>

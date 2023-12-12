@@ -11,6 +11,7 @@ var fruitname=["images/applename.png",
 var guessNum = 0
 var guessatemp 
 var guessbtemp
+var times = 0
 var sroce = 0
 var randomarray = new Array(10)
 
@@ -25,11 +26,13 @@ function mermorygameinit(){
 }
 async function guess(n){
     guessNum++
+    times++
     var temp = document.getElementsByClassName("imgcontainer")
     temp[n].childNodes[1].src = randomarray[n]<=4?fruitpicture[randomarray[n]]:fruitname[randomarray[n]-5]
     if(guessNum%2 == 1){
         guessatemp = n
         console.log(guessNum + "  "+ guessatemp + "  "+guessbtemp);
+        temp[guessatemp].childNodes[1].setAttribute("onclick","")  
     }else{
         guessbtemp = n
         console.log(guessNum + "  "+ guessatemp + "  "+guessbtemp);
@@ -38,12 +41,17 @@ async function guess(n){
             temp[guessbtemp].childNodes[1].setAttribute("onclick","")   
             sroce++
         }else{
-            await sleep(1000)
+            await sleep(800)
+            temp[guessatemp].childNodes[1].setAttribute("onclick","guess("+(guessatemp)+")")  
             temp[guessatemp].childNodes[1].src = "./images/qmark.png"
             temp[guessbtemp].childNodes[1].src = "./images/qmark.png"
         }
     }
-    
+    if(sroce == 5){
+        localStorage.setItem("times",times)
+        var wintemp = document.getElementById("win")
+        wintemp.setAttribute("style","display: block;margin-left: 2rem;margin-bottom: 2rem;")
+    }
 }
 function random(){
     for(var i=0;i<10;i++){
