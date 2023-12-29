@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .card {
+                width: 15rem;
+                height: 15rem;
+                margin: auto;
+                border: 1px solid #000;
+                position: relative;
+                perspective: 150rem;
+            }
+            .font,
+            .back {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                
+                color: #fff;
+                
+                box-sizing: border-box;
+                transition: all 0.5s;
+                backface-visibility: hidden;
+            }
+            .font {
+                background: gray;
+                padding: 4rem 5rem;
+                font-size: 5rem;
+            }
+            .back {
+                background: gray;
+                transform: rotateY(-180deg);
+                padding: 4rem 6rem;
+                font-size: 5rem;
+            }
+            .card:hover .font {
+                transform: rotateY(180deg);
+            }
+            .card:hover .back {
+                transform: rotateY(0);
+            }
+
+        </style>
+    </head>
+    <body>
+      <div class="container-fluid " style="background-color: #d3dee2f3;">
+        <div class="row " style="background-color: #e3f2fd;">
+          <div class="col-12 col-md-12 m-3" >
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+              <div class="container-fluid">
+                <a class="navbar-brand " href="./index.html">日語教學網站</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                      <a class="nav-link active " aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown mx-2 ">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        五十音
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">教學</a></li>
+                        <li><a class="dropdown-item" href="./50test.html">測驗</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item mx-2">
+                      <li class="nav-item dropdown mx-2 ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          基本單字
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="./basicwordeducate.html">教學</a></li>
+                          <li><a class="dropdown-item" href="./basicwordtest.html">測驗</a></li>
+                        </ul>
+                      </li>
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-lg d-flex">  
+                      login
+                  </button>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-12 col-md-2 border">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d3dee2f3;">
+              <div class="container-fluid">
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText1" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText1">
+                  <div class="  btn-group-lg ">
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">あ行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">か行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">さ行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">た行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">な行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">は行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">ま行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">や行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">ら行</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">わ行</button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div class="col-12 col-md-10 border " >
+            <div class="container-fluid ">
+              <div class="row mt-5">
+                <div class="col-12">
+                  <div class='card' >
+                    <div class="font" id="fontCard">あ</div>
+                    <div class="back" id="backCard">a</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3" >
+                <div class="col-12 ">
+                  <div class="  btn-group-lg d-flex justify-content-center"  >
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">上一個字</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">發音</button>
+                    <button type="button" class="btn btn-light btn-outline-dark mx-2">下一個字</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="row">
+            <div class="col-12 col-md-12 border">
+                <footer>
+                    
+                </footer>
+            </div>
+        </div>    
+      </div> 
+    </body>
+</html>
