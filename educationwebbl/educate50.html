@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <style>
+            .card {
+                width: 15rem;
+                height: 15rem;
+                margin: auto;
+                border: 1px solid #000;
+                position: relative;
+                perspective: 150rem;
+            }
+            .font,
+            .back {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                
+                color: #fff;
+                
+                box-sizing: border-box;
+                transition: all 0.5s;
+                backface-visibility: hidden;
+            }
+            .font {
+                background: gray;
+                padding: 4rem 5rem;
+                font-size: 5rem;
+            }
+            .back {
+                background: gray;
+                transform: rotateY(-180deg);
+                padding: auto;
+                display: inline-block;
+                text-align: center;
+                font-size: 5rem;
+            }
+            .back:before {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 100%;
+                vertical-align: middle;
+            }
+            .card:hover .font {
+                transform: rotateY(180deg);
+            }
+            .card:hover .back {
+                transform: rotateY(0);
+            }
+        </style>
+    </head>
+    <body onload="init()">
+        <div class="container-fluid " style="background-color: #d3dee2f3;">
+          <div class="row " style="background-color: #e3f2fd;">
+            <div class="col-12 col-md-12 m-3" >
+              <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+                <div class="container-fluid">
+                  <a class="navbar-brand " href="./index.html">日語教學網站</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item mx-2">
+                        <a class="nav-link active "  href="./index.html">Home</a>
+                      </li>
+                      <li class="nav-item dropdown mx-2 ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          五十音
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="./educate50.html">教學</a></li>
+                          <li><a class="dropdown-item" href="./test50.html">測驗</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item mx-2">
+                        <li class="nav-item dropdown mx-2 ">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            基本單字
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./educateword.html">教學</a></li>
+                            <li><a class="dropdown-item" href="./testword.html">測驗</a></li>
+                          </ul>
+                        </li>
+                      </li>
+                      <li class="nav-item mx-2">
+                        <a class="nav-link active "  href="./studyresult.html">學習歷程</a>
+                      </li>
+                    </ul>
+                    <h3 id="name"></h3>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-12 col-md-5 border d-md-flex justify-content-center">
+              <nav class="navbar navbar-expand-md navbar-light " style="background-color: #d3dee2f3;">
+                <div class="container-fluid ">
+                  <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText1" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse " id="navbarText1">
+                    <div class="  btn-group-lg mt-2  m-lg-3 ps-4">
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(0)">あ行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(1)">か行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(2)">さ行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(3)">た行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(4)">な行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(5)">は行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(6)">ま行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(7)">や行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(8)">ら行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(9)">わ行</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(10)">ん行</button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div class="col-12 col-md-7 border " >
+              <div class="container-fluid ">
+                <div class="row mt-5">
+                  <div class="col-12 mt-md-5">
+                    <div class='card mt-md-5' >
+                      <div class="font" id="fontCard">あ</div>
+                      <div class="back" id="backCard">a</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row mt-2" >
+                  <div class="offset-3 col-3 d-flex justify-content-center">
+                    <div class="form-check mt-md-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1" checked onclick="displayword()">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        平假名
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-3 d-flex justify-content-center">
+                    <div class="form-check mt-md-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="2" onclick="displayword()">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        片假名
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row mt-2 d-flex justify-content-center" >
+                  <div class="col-3 d-flex justify-content-center">
+                    <div class="form-check mt-md-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault11" value="1" checked onclick="displayword()">
+                      <label class="form-check-label" for="flexRadioDefault11">
+                        清音
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-3 d-flex justify-content-center">
+                    <div class="form-check mt-md-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault12" value="2" onclick="displayword()" disabled>
+                      <label class="form-check-label" for="flexRadioDefault12">
+                        濁音
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-3 d-flex justify-content-center" >
+                    <div class="form-check mt-md-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault13" value="3" onclick="displayword()" disabled>
+                      <label class="form-check-label" for="flexRadioDefault13">
+                        半濁音
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row my-3" >
+                  <div class="col-12 ">
+                    <div class="  btn-group-lg d-flex justify-content-center "  >
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="backword()">上一個字</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="speak()">發音</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="nextword()">下一個字</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="row">
+              <div class="col-12 col-md-12 border">
+                  <footer>
+                      
+                  </footer>
+              </div>
+          </div>    
+        </div> 
+        <script src="educate50.js"></script>
+    </body>
+</html>

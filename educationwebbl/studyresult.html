@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     </head>
-    <body>
+    <body onload="init()">
         <div class="container-fluid " style="background-color: #d3dee2f3;">
           <div class="row " style="background-color: #e3f2fd;">
             <div class="col-12 col-md-12 m-3" >
@@ -46,7 +46,6 @@
                         <a class="nav-link active"  href="./studyresult.html">學習歷程</a>
                       </li>
                     </ul>
-                    
                   </div>
                 </div>
               </nav>
@@ -54,20 +53,20 @@
           </div> 
           
           <div class="row m-3 mt-5">
-            <div class="col-lg-3 col-5">
-              <h3>姓名</h3>
+            <div class="col-lg-4 col-5">
+              <h3 id="a"></h3>
             </div>
           </div> 
-          <div class="row m-2">
+          <div class="row m-3 mt-5">
             <div class="col-lg-3 col-5">
-              <input class="form-control" type="text"  id="a" >
+              <h3 id="b"></h3>
             </div>
           </div> 
-          <div class="row m-3">
+          <div class="row m-3 mt-5">
             <div class="col-lg-3 col-5">
-              <button class="btn btn-primary" onclick="login()">login</button>
+              <h3 id="c"></h3>
             </div>
-          </div>
+          </div> 
           <div class="row">
               <div class="col-12 col-md-12 border">
                   <footer>
@@ -76,6 +75,6 @@
               </div>
           </div>    
         </div> 
-        <script src="main.js"></script>
+        <script src="studyresult.js"></script>
     </body>
 </html>

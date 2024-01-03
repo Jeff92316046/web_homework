@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
         <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     </head>
-    <body>
+    <body onload="init()">
         <div class="container-fluid " style="background-color: #d3dee2f3;">
           <div class="row " style="background-color: #e3f2fd;">
             <div class="col-12 col-md-12 m-3" >
@@ -20,7 +20,7 @@
                   <div class="collapse navbar-collapse " id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item mx-2">
-                        <a class="nav-link active " aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link active "  href="./index.html">Home</a>
                       </li>
                       <li class="nav-item dropdown mx-2 ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,39 +43,43 @@
                         </li>
                       </li>
                       <li class="nav-item mx-2">
-                        <a class="nav-link active"  href="./studyresult.html">學習歷程</a>
+                        <a class="nav-link active "  href="./studyresult.html">學習歷程</a>
                       </li>
                     </ul>
-                    
+                    <h3 id="name"></h3>
                   </div>
                 </div>
               </nav>
             </div>
-          </div> 
-          
-          <div class="row m-3 mt-5">
-            <div class="col-lg-3 col-5">
-              <h3>姓名</h3>
-            </div>
-          </div> 
-          <div class="row m-2">
-            <div class="col-lg-3 col-5">
-              <input class="form-control" type="text"  id="a" >
-            </div>
-          </div> 
-          <div class="row m-3">
-            <div class="col-lg-3 col-5">
-              <button class="btn btn-primary" onclick="login()">login</button>
-            </div>
           </div>
           <div class="row">
-              <div class="col-12 col-md-12 border">
-                  <footer>
-                      
-                  </footer>
-              </div>
-          </div>    
+            <div class="col-auto m-3">
+              <button class="btn btn-primary btn-lg" id="startbtn" onclick="random_question()">開始測驗</button>
+            </div>
+            <div class="col-auto m-3 d-flex justify-content-center">
+              <h1 id="timer">
+                
+              </h1>
+            </div>
+          </div> 
+          <div class="row ms-2">
+            <div class="col-12 col-md-12 ">
+              <ol id="questionlist">
+
+              </ol>
+            </div>  
+          </div> 
+          <div class="row">
+            <div class="col-auto m-3 ">
+              <button class="btn btn-primary btn-lg" id="summitbtn" onclick="answer_check()" style="display: none;">submit</button>
+            </div>
+            <div class="col-auto m-3 d-flex justify-content-center">
+              <h1 id="point">
+                
+              </h1>
+            </div>
+          </div> 
         </div> 
-        <script src="main.js"></script>
+        <script src="test50.js"></script>
     </body>
 </html>

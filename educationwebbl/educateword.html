@@ -19,24 +19,30 @@
             .back {
                 width: 100%;
                 height: 100%;
-                position: absolute;
-                
+                position: absolute;    
                 color: #fff;
-                
                 box-sizing: border-box;
                 transition: all 0.5s;
                 backface-visibility: hidden;
             }
             .font {
-                background: gray;
-                padding: 4rem 5rem;
-                font-size: 5rem;
+                background: rgb(187, 187, 187);
+                font-size: 4rem;
             }
             .back {
                 background: gray;
                 transform: rotateY(-180deg);
-                padding: 4rem 6rem;
-                font-size: 5rem;
+                padding: auto;
+                display: inline-block;
+                text-align: center;
+                font-size: 3rem;
+            }
+            .back:before {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 100%;
+                vertical-align: middle;
             }
             .card:hover .font {
                 transform: rotateY(180deg);
@@ -44,10 +50,9 @@
             .card:hover .back {
                 transform: rotateY(0);
             }
-
         </style>
     </head>
-    <body>
+    <body onload="init()">
         <div class="container-fluid " style="background-color: #d3dee2f3;">
           <div class="row " style="background-color: #e3f2fd;">
             <div class="col-12 col-md-12 m-3" >
@@ -60,15 +65,15 @@
                   <div class="collapse navbar-collapse " id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item mx-2">
-                        <a class="nav-link active " aria-current="page" href="./index.html">Home</a>
+                        <a class="nav-link active "  href="./index.html">Home</a>
                       </li>
                       <li class="nav-item dropdown mx-2 ">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           五十音
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">教學</a></li>
-                          <li><a class="dropdown-item" href="./50test.html">測驗</a></li>
+                          <li><a class="dropdown-item" href="./educate50.html">教學</a></li>
+                          <li><a class="dropdown-item" href="./test50.html">測驗</a></li>
                         </ul>
                       </li>
                       <li class="nav-item mx-2">
@@ -77,60 +82,70 @@
                             基本單字
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./basicwordeducate.html">教學</a></li>
-                            <li><a class="dropdown-item" href="./basicwordtest.html">測驗</a></li>
+                            <li><a class="dropdown-item" href="./educateword.html">教學</a></li>
+                            <li><a class="dropdown-item" href="./testword.html">測驗</a></li>
                           </ul>
                         </li>
                       </li>
+                      <li class="nav-item mx-2">
+                        <a class="nav-link active "  href="./studyresult.html">學習歷程</a>
+                      </li>
                     </ul>
-                    <button class="btn btn-primary btn-lg d-flex">  
-                        login
-                    </button>
+                    <h3 id="name"></h3>
                   </div>
                 </div>
               </nav>
             </div>
           </div>
           <div class="row ">
-            <div class="col-12 col-md-2 border">
-              <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d3dee2f3;">
-                <div class="container-fluid">
+            <div class="col-12 col-md-5 border d-md-flex justify-content-center">
+              <nav class="navbar navbar-expand-md navbar-light " style="background-color: #d3dee2f3;">
+                <div class="container-fluid ">
                   <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarText1" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse " id="navbarText1">
-                    <div class="  btn-group-lg ">
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2    ">あ行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">か行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">さ行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">た行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">な行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">は行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">ま行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">や行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">ら行</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">わ行</button>
+                    <div class="  btn-group-lg mt-2  m-lg-3 ps-4">
+                      <button type="button" class="btn btn-light btn-outline-dark mx-lg-2 mx-3 my-1" onclick="rawrefresh(0)">動物</button>
                     </div>
                   </div>
                 </div>
               </nav>
             </div>
-            <div class="col-12 col-md-10 border " >
+            <div class="col-12 col-md-7 border " >
               <div class="container-fluid ">
                 <div class="row mt-5">
-                  <div class="col-12">
-                    <div class='card' >
-                      <div class="font" id="fontCard">あ</div>
-                      <div class="back" id="backCard">a</div>
+                  <div class="col-12 mt-md-5">
+                    <div class='card mt-md-5 ' >
+                      <div class="font" id="fontCard" style="text-align: center; padding-top: 55px">貓</div>
+                      <div class="back" id="backCard">ねこ</div>
                     </div>
                   </div>
                 </div>
-                <div class="row mt-3" >
+                <div class="row my-3" >
+                  <div class="row mt-2" >
+                    <div class="offset-3 col-3 d-flex justify-content-center">
+                      <div class="form-check mt-md-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1" checked onclick="displayword()">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          中文
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center">
+                      <div class="form-check mt-md-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="2" onclick="displayword()">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          圖片
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   <div class="col-12 ">
-                    <div class="  btn-group-lg d-flex justify-content-center"  >
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">上一個字</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">發音</button>
-                      <button type="button" class="btn btn-light btn-outline-dark mx-2">下一個字</button>
+                    <div class="  btn-group-lg d-flex justify-content-center "  >
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="backword()">上一個單字</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="speak()">發音</button>
+                      <button type="button" class="btn btn-light btn-outline-dark mx-1" onclick="nextword()">下一個單字</button>
                     </div>
                   </div>
                 </div>
@@ -143,7 +158,8 @@
                       
                   </footer>
               </div>
-          </div>    
+          </div>   
         </div> 
+        <script src="educateword.js"></script>
     </body>
 </html>
